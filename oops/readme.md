@@ -74,4 +74,5 @@ use trait1 ,trait2{
    trait2::common_method as t1method;
    trait1::private_method as public //access private method by alias public;
 }
+
 ---------------------------------
