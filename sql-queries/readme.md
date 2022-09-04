@@ -2,6 +2,8 @@
 
 
 
+-----
+
 #### Write a query to find the third-highest salary from the Employerofo table.
 
 ```bash
@@ -9,6 +11,8 @@ SELECT * FROM EmployeeInfo ORDER BY salary DESC LIMIT 2,1;
 ```
 
 
+
+-----
 
 #### Write a query to find the Nth highest salary from the table without using TOP/limit keyword.
 
@@ -18,6 +22,8 @@ WHERE N = (SELECT COUNT(DISTINCT salary) FROM employeeinfo e2 WHERE e1.salary <=
 
 ```
 
+-----
+
 #### Wite SQL Query to find duplicate rows in table
 
 ```bash
@@ -25,6 +31,8 @@ WHERE N = (SELECT COUNT(DISTINCT salary) FROM employeeinfo e2 WHERE e1.salary <=
 SELECT *,COUNT(empid) FROM EmployeeInfo GROUP BY empid HAVING COUNT(empid) > 1;
 ```
 
+
+-----
 
 #### Write a query to calculate the even and odd records from a table.
 
@@ -40,6 +48,8 @@ SELECT * FROM Employeeinfo WHERE MOD(EmpID,2)=1;
 
 ```
 
+-----
+
 #### Write a query to display the first and the last record from the EmployeeInfo table.
 
 ```bash
@@ -53,6 +63,8 @@ SELECT * FROM Employeelnfo WHERE EmpID = (SELECT MAX(EmpID) FROM EmployeeInfo);
 
 ```
 
+-----
+
 #### How do you copy all rows of a table using SQL query?
 ```bash
 
@@ -62,6 +74,8 @@ SELECT * FROM Employeelnfo WHERE EmpID = (SELECT MAX(EmpID) FROM EmployeeInfo);
 
 ```
 
+-----
+
 #### Write a query to retrieve the list of employees working in the same department.
 
 ```bash
@@ -70,6 +84,8 @@ Select DISTINCT E.EmpID, E.EmpFname, E.Department FROM EmployeeInfo E, Employeei
 WHERE E.Department = E1.Department AND E.EmpID != E1.EmpID;
 
 ```
+
+-----
 
 #### Write a query to retrieve the last 3 records from the EmployeeInfo table.
 
@@ -81,6 +97,8 @@ temp ORDER BY EmpID ASC;
 SELECT * FROM temp ORDER BY EmpID ASC;
 ```
 
+-----
+
 #### Write a query to fetch details of employees whose EmpLname ends with an alphabet 'A' and contains five alphabets.
 
 ```bash
@@ -88,6 +106,8 @@ SELECT * FROM temp ORDER BY EmpID ASC;
 SELECT * FROM EmployeeInfo WHERE EmpLname LIKE '_______a';
 
 ```
+
+-----
 
 #### Write a query to delete the Duplicate record from employee_info table.
 
@@ -99,12 +119,16 @@ WHERE E1.email = E2.email AND E1.Id > E2.Id;
 
 ```
 
+-----
+
 #### Write a query to retrieve the first four characters of Fmployee me from the employee_info table.
 
 ```bash
 SELECT SUBSTRING(name, 1,4) FROM employee_info;
 
 ```
+
+-----
 
 #### Write a query find number of employees whose DOB is between 01/06/1995 to 30/06/1998 and are grouped according to gender
 
@@ -124,6 +148,8 @@ GROUP BY Gender;
 
 ```
 
+-----
+
 #### Write a query to fetch details of all employees excluding the employees who are 'HR' and 'Admin"
 
 ```bash
@@ -131,6 +157,8 @@ GROUP BY Gender;
 SELECT * FROM employee_info WHERE department NOT IN ('HR','Admin');
 
 ```
+
+-----
 
 #### Write a query to fetch 50% records from the employee_info table.
 
@@ -151,6 +179,8 @@ EXECUTE STMT USING @count;
 
 ```
 
+-----
+
 #### Write a query to display the total salary of each employee after adding 10% increment in the Salary.
 
 ```bash
@@ -159,7 +189,9 @@ SELECT id,name, salary+(salary/10) as TotalSalary FROM employee_info;
 
 ```
 
-#### rite a query to retrieve two minimum and maximum salaries .
+-----
+
+#### Write a query to retrieve two minimum and maximum salaries .
 
 ```bash
 ->For minimum Salary
@@ -172,6 +204,8 @@ FROM employee_info E2 WHERE E1.salary >= E2.salary) ORDER BY E1.salary;
 SELECT DISTINCT salary FROM employee_info E1 WHERE 2 >= (SELECT COUNT(DISTINCT salary)
 FROM employee_info E2 WHERE E1.salary <= E2.salary) ORDER BY E1.salary DESC;
 ```
+
+-----
 
 #### Write a query to fetch the employee name and replace the space with '-'.
 
