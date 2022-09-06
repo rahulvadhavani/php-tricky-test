@@ -240,3 +240,22 @@ function square($n = 5)
         echo '<br>';
     }
 }
+
+
+// bubble sorting algorithem
+function sortMe($arr = []){
+    $n = count($arr);
+    for ($i = 0; $i < $n-1; $i++) {
+        for ($j = 0; $j < $n-1-$i; $j++) {
+            if($arr[$j] > $arr[$j+1]){
+                $tmp = $arr[$j];
+                $arr[$j] = $arr[$j+1];
+                $arr[$j+1] = $tmp;
+            }
+        }
+    }
+    return $arr;
+}
+
+// $arr = sortMe([5,1,25,6,33,100,9,7,2,3]);
+// print_r($arr);
