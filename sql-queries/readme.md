@@ -167,6 +167,8 @@ SELECT * FROM employee_info WHERE department NOT IN ('HR','Admin');
 
 SELECT * FROM employee_info WHERE Id <= (SELECT COUNT(Id)/2 FROM employee_info );
 
+SELECT * FROM ( SELECT *, NTILE(2) OVER (ORDER BY (SELECT NULL)) AS tile FROM employeeinfo ) AS subquery;
+
 ->When some records are deleted.
 
 SET @count = (SELECT COUNT(Id)/2 FROM employee_info);
