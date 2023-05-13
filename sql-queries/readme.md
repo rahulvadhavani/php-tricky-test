@@ -55,11 +55,11 @@ SELECT * FROM Employeeinfo WHERE MOD(EmpID,2)=1;
 ```bash
 ->For First record
 
-SELECT * FROM Employeelnfo WHERE EmpID= (SELECT MIN(EmpID) FROM EmployeeInfo);
+SELECT * FROM Employeelnfo WHERE EmpID IN (SELECT MIN(EmpID) FROM EmployeeInfo);
 
 ->For Last record
 
-SELECT * FROM Employeelnfo WHERE EmpID = (SELECT MAX(EmpID) FROM EmployeeInfo);
+SELECT * FROM Employeelnfo WHERE EmpID IN (SELECT MAX(EmpID) FROM EmployeeInfo);
 
 ```
 
