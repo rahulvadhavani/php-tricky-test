@@ -11,6 +11,8 @@ SELECT * FROM EmployeeInfo ORDER BY salary DESC LIMIT 2,1;
 ```
 
 
+SELECT * from (SELECT *, (ROW_NUMBER() over (ORDER BY salary DESC)) as `row_no` FROM `employeeinfo`) temp WHERE row_no = 3;
+
 
 -----
 
