@@ -216,3 +216,34 @@ FROM employee_info E2 WHERE E1.salary <= E2.salary) ORDER BY E1.salary DESC;
 ```bash
 SELECT REPLACE(name, '','-') FROM employee_info;
 ```
+
+
+
+
+## Over Clause.
+- used for get agrigrate data with regular data
+- Any of the following functions can be used.
+Sum(), Avg(), Count(), Min(), Max(), Row_Number(), Rank(), Dense Rank() etc
+
+
+#### Get all users records with count of gender
+ 
+```bash
+SELECT *,( COUNT(company) over (PARTITION BY company)) as c_count  FROM employeeinfo;
+```
+
+#### Find Nth number of highest salary 
+
+```bash
+SELECT * from (SELECT *, (ROW_NUMBER() over (ORDER BY salary DESC)) as `row_no` FROM `employeeinfo`) temp WHERE row_no = 3;
+```
+
+
+```bash
+SELECT Salary
+FROM (
+  SELECT Salary, DENSE_RANK() OVER (ORDER BY Salary DESC) AS Rank
+  FROM Employee
+) AS RankedSalaries
+WHERE Rank <= 3;
+```
